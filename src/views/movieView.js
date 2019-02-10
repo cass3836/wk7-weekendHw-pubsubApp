@@ -4,16 +4,42 @@ const MovieView = function(movie){
 };
 
 MovieView.prototype.render = function(){
-  console.log('this.movie:', this.movie);
   const element = document.querySelector('#movie');
-  const movie = document.createElement('p');
-  movie.textContent =
-  `Movie title: ${this.movie.title}
-  Description: ${this.movie.description}`;
-  console.log('movie:', movie);
-  console.log('element:', element);
-  element.appendChild(movie);
+  // const movie = document.createElement('p');
+
+  const title = this.createTitle();
+  const year = this.createYear();
+  const director = this.createDirector();
+  const description = this.createDescription();
+  element.appendChild(title);
+  element.appendChild(year);
+  element.appendChild(director);
+  element.appendChild(description);
+
 };
 
+MovieView.prototype.createTitle = function(){
+  const title = document.createElement('h1');
+  title.textContent = `Title: ${this.movie.title}`;
+  return title;
+};
+
+MovieView.prototype.createYear = function(){
+  const year = document.createElement('h2');
+  year.textContent = `Year: ${this.movie.year}`;
+  return year;
+};
+
+MovieView.prototype.createDirector = function(){
+  const director = document.createElement('h2');
+  director.textContent = `Director: ${this.movie.director}`;
+  return director;
+};
+
+MovieView.prototype.createDescription = function(){
+  const description = document.createElement('p');
+  description.textContent = `Description: ${this.movie.description}`;
+  return description;
+};
 
 module.exports = MovieView;

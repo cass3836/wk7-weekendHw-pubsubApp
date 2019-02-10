@@ -20,10 +20,7 @@ MoviesListView.prototype.render = function (){
   console.log('this.data:', this.data);
   this.data.forEach((movie) => {
     const movieView = new MovieView(movie);
-    console.log('movieView:', movieView);
     movieView.render();
-    console.log('element:', this.element);
-    this.element.appendChild(movieView);
   });
 }
 
