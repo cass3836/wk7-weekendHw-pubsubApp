@@ -20,13 +20,13 @@ MovieView.prototype.render = function(){
 
 MovieView.prototype.createTitle = function(){
   const title = document.createElement('h1');
-  title.textContent = `Title: ${this.movie.title}`;
+  title.textContent = `${this.movie.title}`;
   return title;
 };
 
 MovieView.prototype.createYear = function(){
   const year = document.createElement('h2');
-  year.textContent = `Year: ${this.movie.year}`;
+  year.textContent = `Year: ${this.movie.release_date}`;
   return year;
 };
 
