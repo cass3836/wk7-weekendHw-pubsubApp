@@ -29,12 +29,12 @@ MovieView.prototype.createYear = function(){
   year.textContent = `Year: ${this.movie.release_date}`;
   return year;
 };
-
-MovieView.prototype.createDirector = function(){
-  const director = document.createElement('h2');
-  director.textContent = `Director: ${this.movie.director}`;
-  return director;
-};
+//
+// MovieView.prototype.createDirector = function(){
+//   const director = document.createElement('h2');
+//   director.textContent = `Director: ${this.movie.director}`;
+//   return director;
+// };
 
 MovieView.prototype.createDescription = function(){
   const description = document.createElement('p');
