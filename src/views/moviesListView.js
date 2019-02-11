@@ -12,9 +12,22 @@ MoviesListView.prototype.bindEvents = function (){
     console.log('event.detail:', event.detail);
     this.data = event.detail;
     this.render();
+    this.populateDropdown(this.data);
   })
 }
 
+MoviesListView.prototype.populateDropdown = function(allData){
+  options = allData.map(movie => movie.director)
+    .filter((director, index, allData) => allData.indexOf(director) === index);
+  // console.log(options);
+  options.forEach((director, index) => {
+    const directorsDropdown = document.querySelector('#directorsDropdown');
+    const option = document.createElement('option');
+    option.textContent = director;
+    option.value = director;
+    directorsDropdown.appendChild(option);
+  });
+};
 
 MoviesListView.prototype.render = function (){
   console.log('this.data:', this.data);
